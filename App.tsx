@@ -39,14 +39,6 @@ const App: React.FC = () => {
                     </div>
                 </main>
 
-                <footer className="text-center py-12 border-t border-zinc-900/50">
-                    <p className="text-zinc-600 text-sm font-mono drop-shadow-sm">
-                        // Designed with React & Tailwind CSS // 
-                        <span className="text-zinc-500 font-bold hover:text-indigo-400 transition-colors cursor-pointer ml-1">
-                            Modular Portfolio Template
-                        </span>
-                    </p>
-                </footer>
             </div>
         </div>
     );
