@@ -59,4 +59,32 @@ export const Header: React.FC = () => {
                         <p className="text-zinc-500 max-w-xl leading-relaxed">
                             {tagline}
                         </p>
-                        
+                    </div>
+                </div>
+            </div>
+
+            {/* Right Column: Stats & Actions */}
+            <div className="space-y-6 flex flex-col justify-center">
+                
+                {/* Stats Grid */}
+                <div className="grid grid-cols-3 gap-3">
+                    {stats.map((stat, i) => (
+                        <StatBlock key={i} value={stat.value} label={stat.label} />
+                    ))}
+                </div>
+
+                {/* Contact Actions */}
+                <div className="flex flex-wrap gap-3">
+                    {contact.map((item, i) => (
+                        <IconButton3D 
+                            key={i}
+                            icon={item.icon}
+                            text={item.label}
+                            href={item.link}
+                        />
+                    ))}
+                </div>
+            </div>
+        </header>
+    );
+};
