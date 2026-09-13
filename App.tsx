@@ -41,14 +41,15 @@ const App: React.FC = () => {
                     </div>
                 </main>
 
-                {/* Footer status indicator */}
-                <footer className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-white/50">
-                    <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                        <span>Systems operational • Local-first sovereign runtime</span>
-                    </div>
+                {/* Professional Footer */}
+                <footer className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-white/50">
                     <div>
-                        <span>Engineered with OpenBricks 4.0</span>
+                        <span>© {new Date().getFullYear()} Nath Favour. All rights reserved.</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <a href="https://github.com/nathfavour" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+                        <a href="https://x.com/nathfavour_" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">X</a>
+                        <a href="mailto:nathfavour02@gmail.com" className="hover:text-white transition-colors">Email</a>
                     </div>
                 </footer>
             </div>

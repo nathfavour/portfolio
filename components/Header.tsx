@@ -75,15 +75,9 @@ export const Header: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Right Column: Stats & Tactile Actions */}
-                <div className="flex flex-col gap-4 justify-center">
-                    <div className="grid grid-cols-3 gap-2.5">
-                        {stats.map((stat, i) => (
-                            <StatBlock key={i} value={stat.value} label={stat.label} />
-                        ))}
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 pt-1">
+                {/* Right Column: Contact & Profiles */}
+                <div className="flex flex-col sm:items-end justify-center gap-3">
+                    <div className="flex flex-wrap gap-2">
                         {contact.map((item, i) => (
                             <IconButton3D 
                                 key={i}

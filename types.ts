@@ -75,7 +75,7 @@ export interface CvConfig {
     profileImage?: string; // Optional manual override or fallback
     openToWork: boolean;
     contact: ContactItem[];
-    stats: StatItem[];
+    stats?: StatItem[];
     technicalArsenal: TechStack;
     flagship: FlagshipProject;
     projectTiers: ProjectTier[];

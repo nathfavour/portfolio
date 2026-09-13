@@ -62,12 +62,6 @@ export const CV_CONFIG: CvConfig = {
         },
     ],
 
-    stats: [
-        { label: "Grant Funding", value: "$50k" },
-        { label: "Commits", value: "3k+" },
-        { label: "Flagship Apps", value: "6" },
-    ],
-
     technicalArsenal: {
         languages: ["Zig", "Rust", "TypeScript", "Python", "WebAssembly"],
         core: ["RISC-V Architectures", "Post-Quantum Cryptography", "Autonomous Agents", "Local-First Systems"],
@@ -218,16 +212,22 @@ export const CV_CONFIG: CvConfig = {
 
     experience: [
         {
-            company: "Independent Systems & R&D",
-            role: "Systems & Autonomous Agents Engineer",
-            period: "2023 - Present",
-            desc: "Architecting local-first platforms, post-quantum cryptographic primitives, and agentic settlement rails in Zig, Rust, and TypeScript."
+            company: "Kylrix",
+            role: "Chief Technology Officer (CTO)",
+            period: "2026 - Present",
+            desc: "Architecting unified local-first productivity workspace, passkey authentication, and autonomous agent orchestration."
+        },
+        {
+            company: "Deepersensor R&D",
+            role: "Chief Technology Officer (CTO)",
+            period: "2022 - 2025",
+            desc: "Directed advanced research and engineering on embedded neural architectures and autonomous systems."
         },
         {
             company: "BainaryGlobe",
-            role: "Backend & Systems Developer",
-            period: "2021 - 2023",
-            desc: "Engineered scalable backend architectures, APIs, and infrastructure for holding ventures."
+            role: "Chief Technology Officer (CTO)",
+            period: "2020 - 2022",
+            desc: "Led technological direction, core distributed architectures, and engineering infrastructure across multi-venture holdings."
         }
     ],
 
@@ -238,6 +238,7 @@ export const CV_CONFIG: CvConfig = {
     },
 
     community: [
+        { role: "Creator", label: "NOUNLogic Campus Community" },
         { role: "Campus Lead", label: "Cowrywise" },
         { role: "Ambassador", label: "Cleva" }
     ]
