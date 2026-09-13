@@ -58,7 +58,7 @@ export interface ExperienceItem {
 
 export interface EducationItem {
     degree: string;
-    school: string;
+    school?: string;
     focus: string;
 }
 

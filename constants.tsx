@@ -233,12 +233,11 @@ export const CV_CONFIG: CvConfig = {
 
     education: {
         degree: "B.Sc. Mathematics & Computer Science",
-        school: "National Open University of Nigeria",
         focus: "Distributed Systems & Applied Mathematics"
     },
 
     community: [
-        { role: "Creator", label: "NOUNLogic Campus Community" },
+        { role: "Founder", label: "NOUNLogic Campus Community" },
         { role: "Campus Lead", label: "Cowrywise" },
         { role: "Ambassador", label: "Cleva" }
     ]

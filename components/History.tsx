@@ -56,8 +56,8 @@ export const History: React.FC = () => {
                                 </div>
                                 <div className="space-y-1">
                                     <div className="font-bold text-white text-sm sm:text-base">{education.degree}</div>
-                                    <div className="text-xs text-white/70">{education.school}</div>
-                                    <div className="text-[11px] text-emerald-400 font-mono pt-1">{education.focus}</div>
+                                    {education.school && <div className="text-xs text-white/70">{education.school}</div>}
+                                    <div className="text-[11px] text-emerald-400 font-mono">{education.focus}</div>
                                 </div>
                             </div>
                         </div>
