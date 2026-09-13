@@ -71,7 +71,8 @@ export interface CvConfig {
     name: string;
     role: string;
     tagline: string;
-    profileImage?: string; // Optional profile image URL
+    githubUsername?: string;
+    profileImage?: string; // Optional manual override or fallback
     openToWork: boolean;
     contact: ContactItem[];
     stats: StatItem[];

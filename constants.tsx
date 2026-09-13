@@ -26,7 +26,7 @@ export const CV_CONFIG: CvConfig = {
     name: "Nath Favour",
     role: "Systems & Autonomous Agents Engineer",
     tagline: "Systems & autonomous agents engineer building local-first platforms, cryptographic rails, and low-level tooling.",
-    profileImage: "https://res.cloudinary.com/dr266qqeo/image/upload/v1764510640/pfp3_xxonti.jpg",
+    githubUsername: "nathfavour",
     openToWork: true,
     
     contact: [

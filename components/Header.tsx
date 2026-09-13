@@ -3,15 +3,37 @@ import { CV_CONFIG } from '../constants';
 import { IconButton3D, StatBlock } from './UI';
 
 export const Header: React.FC = () => {
-    const { name, role, tagline, profileImage, openToWork, contact, stats } = CV_CONFIG;
+    const { name, role, tagline, githubUsername, profileImage, openToWork, contact, stats } = CV_CONFIG;
+    
+    // Automatically infer GitHub avatar or fallback
+    const inferredUsername = githubUsername || contact.find(c => c.label.toLowerCase() === 'github')?.value?.split('/')?.pop() || 'nathfavour';
+    const [avatarUrl, setAvatarUrl] = React.useState<string>(
+        profileImage || `https://github.com/${inferredUsername}.png`
+    );
+
+    React.useEffect(() => {
+        if (!profileImage && inferredUsername) {
+            // Dynamically query GitHub's public API to resolve whichever dynamic avatar_url GitHub uses
+            fetch(`https://api.github.com/users/${inferredUsername}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.avatar_url) {
+                        setAvatarUrl(data.avatar_url);
+                    }
+                })
+                .catch(() => {
+                    // Falls back to direct dynamic GitHub avatar endpoint https://github.com/<user>.png
+                });
+        }
+    }, [inferredUsername, profileImage]);
 
     return (
         <header className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                     
-                    {/* Modular Profile Image */}
-                    {profileImage && (
+                    {/* Dynamic GitHub Profile Image */}
+                    {avatarUrl && (
                         <div className="shrink-0 relative group mt-2">
                              {/* Container with similar 3D styling to BentoCard */}
                             <div className="
@@ -25,9 +47,10 @@ export const Header: React.FC = () => {
                                 group-hover:scale-[1.02] transition-transform duration-300
                             ">
                                 <img 
-                                    src={profileImage} 
+                                    src={avatarUrl} 
                                     alt={name} 
                                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" 
+                                    loading="lazy"
                                 />
                                 
                                 {/* Inner Gloss Overlay */}
