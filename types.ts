@@ -34,13 +34,19 @@ export interface FlagshipProject {
 
 export interface ProjectItem {
     title: string;
-    role: string;
+    role?: string;
     desc: string;
     tags: string[];
     icon: LucideIcon;
     /** Tailwind classes for the icon container background and border colors */
     accentClass: string;
     link?: string;
+}
+
+export interface ProjectTier {
+    name: string;
+    description: string;
+    projects: ProjectItem[];
 }
 
 export interface ExperienceItem {
@@ -71,6 +77,7 @@ export interface CvConfig {
     stats: StatItem[];
     technicalArsenal: TechStack;
     flagship: FlagshipProject;
+    projectTiers: ProjectTier[];
     projects: ProjectItem[];
     experience: ExperienceItem[];
     education: EducationItem;
