@@ -8,47 +8,75 @@ export const History: React.FC = () => {
 
     return (
         <div className="md:col-span-2">
-             <BentoCard title="History & Education" icon={Briefcase}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <BentoCard title="Track Record & Education" icon={Briefcase} className="bg-[#161412] border-white/10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
-                    {/* Work History */}
-                    <div className="space-y-8">
-                        <h4 className="text-sm text-zinc-500 uppercase tracking-wider font-bold border-b border-zinc-800 pb-2 drop-shadow-sm">Experience</h4>
-                        {experience.map((e, i) => (
-                            <div key={i} className="relative pl-6 border-l-2 border-zinc-800">
-                                <div className="absolute left-[-7px] top-1.5 w-3 h-3 rounded-full bg-zinc-800 border-2 border-zinc-600 shadow-[0_0_10px_rgba(0,0,0,0.5)]"></div>
-                                <div className="flex justify-between items-baseline mb-1">
-                                    <span className="font-bold text-white text-lg">{e.company}</span>
-                                    <span className="text-xs font-mono text-zinc-500 bg-black/30 px-2 py-0.5 rounded border border-white/5">{e.period}</span>
+                    {/* Work Experience */}
+                    <div className="space-y-6">
+                        <div className="flex items-center gap-2 border-b border-white/10 pb-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-pink-500"></span>
+                            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                                Experience
+                            </h4>
+                        </div>
+
+                        <div className="space-y-4">
+                            {experience.map((e, i) => (
+                                <div key={i} className="p-4 rounded-2xl bg-black border border-white/10 space-y-2">
+                                    <div className="flex justify-between items-baseline gap-2">
+                                        <span className="font-bold text-white text-sm sm:text-base tracking-tight">{e.company}</span>
+                                        <span className="text-[10px] font-mono text-white/60 bg-[#161412] px-2 py-0.5 rounded-md border border-white/10">
+                                            {e.period}
+                                        </span>
+                                    </div>
+                                    <div className="text-xs text-pink-400 font-mono tracking-tight font-medium">
+                                        {e.role}
+                                    </div>
+                                    <p className="text-xs text-white/75 leading-relaxed font-normal">
+                                        {e.desc}
+                                    </p>
                                 </div>
-                                <div className="text-xs text-indigo-400 mb-2 font-mono uppercase tracking-tight">{e.role}</div>
-                                <p className="text-sm text-zinc-400 leading-relaxed">{e.desc}</p>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
 
                     {/* Education & Community */}
-                    <div className="space-y-8">
-                        <div>
-                            <h4 className="text-sm text-zinc-500 uppercase tracking-wider font-bold border-b border-zinc-800 pb-2 mb-4 drop-shadow-sm">Education</h4>
-                            <div className="flex items-start gap-4 p-4 rounded-xl bg-black/20 border border-white/5 shadow-inner">
-                                <GraduationCap className="w-6 h-6 text-zinc-500 mt-1" />
-                                <div>
-                                    <div className="font-bold text-white text-lg">{education.degree}</div>
-                                    <div className="text-sm text-zinc-400">{education.school}</div>
-                                    <div className="text-xs text-indigo-400 mt-2 font-mono">{education.focus}</div>
+                    <div className="space-y-6">
+                        <div className="space-y-3">
+                            <div className="flex items-center gap-2 border-b border-white/10 pb-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                                    Education
+                                </h4>
+                            </div>
+
+                            <div className="p-4 rounded-2xl bg-black border border-white/10 flex items-start gap-3.5">
+                                <div className="p-2 rounded-xl bg-[#161412] border border-white/10 text-emerald-400 shrink-0 mt-0.5">
+                                    <GraduationCap className="w-5 h-5" />
+                                </div>
+                                <div className="space-y-1">
+                                    <div className="font-bold text-white text-sm sm:text-base">{education.degree}</div>
+                                    <div className="text-xs text-white/70">{education.school}</div>
+                                    <div className="text-[11px] text-emerald-400 font-mono pt-1">{education.focus}</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div>
-                            <h4 className="text-sm text-zinc-500 uppercase tracking-wider font-bold border-b border-zinc-800 pb-2 mb-4 drop-shadow-sm">Community</h4>
-                            <div className="space-y-3">
+                        <div className="space-y-3">
+                            <div className="flex items-center gap-2 border-b border-white/10 pb-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                                <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                                    Leadership & Community
+                                </h4>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                                 {community.map((c, i) => (
-                                    <div key={i} className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors cursor-default">
-                                        <Users className="w-4 h-4 text-zinc-600" />
-                                        <div className="flex flex-col">
-                                            <span className="text-sm text-zinc-300">{c.role}, {c.label}</span>
+                                    <div key={i} className="flex items-center gap-2.5 p-3 rounded-xl bg-black border border-white/10">
+                                        <Users className="w-4 h-4 text-cyan-400 shrink-0" />
+                                        <div className="flex flex-col min-w-0">
+                                            <span className="text-xs font-bold text-white truncate">{c.role}</span>
+                                            <span className="text-[10px] font-mono text-white/60 truncate">{c.label}</span>
                                         </div>
                                     </div>
                                 ))}
@@ -57,7 +85,7 @@ export const History: React.FC = () => {
                     </div>
 
                 </div>
-             </BentoCard>
+            </BentoCard>
         </div>
     );
 };

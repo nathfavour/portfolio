@@ -13,7 +13,6 @@ export const Header: React.FC = () => {
 
     React.useEffect(() => {
         if (!profileImage && inferredUsername) {
-            // Dynamically query GitHub's public API to resolve whichever dynamic avatar_url GitHub uses
             fetch(`https://api.github.com/users/${inferredUsername}`)
                 .then(res => res.json())
                 .then(data => {
@@ -21,91 +20,79 @@ export const Header: React.FC = () => {
                         setAvatarUrl(data.avatar_url);
                     }
                 })
-                .catch(() => {
-                    // Falls back to direct dynamic GitHub avatar endpoint https://github.com/<user>.png
-                });
+                .catch(() => {});
         }
     }, [inferredUsername, profileImage]);
 
     return (
-        <header className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-                <div className="flex flex-col md:flex-row gap-8 items-start">
+        <header className="p-6 sm:p-8 rounded-[26px] bg-[#161412] border border-white/10 shadow-2xl relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
+                <div className="lg:col-span-2 flex flex-col sm:flex-row gap-6 sm:gap-8 items-start sm:items-center">
                     
-                    {/* Dynamic GitHub Profile Image */}
+                    {/* Dynamic Avatar with OpenBricks 4.0 contouring */}
                     {avatarUrl && (
-                        <div className="shrink-0 relative group mt-2">
-                             {/* Container with similar 3D styling to BentoCard */}
+                        <div className="shrink-0 relative group">
                             <div className="
-                                w-32 h-32 md:w-40 md:h-40 relative rounded-3xl overflow-hidden
-                                bg-zinc-900 
-                                border-t border-zinc-700/80 
-                                border-l border-zinc-800/80
-                                border-r border-black/50
-                                border-b border-black/80
-                                shadow-[0_8px_30px_rgb(0,0,0,0.6)]
-                                group-hover:scale-[1.02] transition-transform duration-300
+                                w-24 h-24 sm:w-32 sm:h-32 rounded-[22px] overflow-hidden
+                                bg-black
+                                border-2 border-white/15 group-hover:border-pink-500/50
+                                shadow-2xl transition-all duration-300
                             ">
                                 <img 
                                     src={avatarUrl} 
                                     alt={name} 
-                                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" 
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                                     loading="lazy"
                                 />
-                                
-                                {/* Inner Gloss Overlay */}
-                                <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10 pointer-events-none"></div>
                             </div>
-
-                            {/* Back Glow */}
-                            <div className="absolute -inset-3 bg-indigo-500/20 blur-xl rounded-full -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         </div>
                     )}
 
-                    {/* Text Content */}
-                    <div className="space-y-5 flex-1">
+                    {/* Header Info */}
+                    <div className="space-y-3 flex-1 min-w-0">
                         {openToWork && (
-                            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 shadow-lg text-emerald-400 text-xs font-mono mb-2 backdrop-blur-md">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/70 border border-emerald-500/30 text-emerald-400 text-xs font-mono tracking-tight">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                                 </span>
-                                OPEN TO R&D OPPORTUNITIES
+                                OPEN TO SYSTEMS & R&D ENGAGEMENTS
                             </div>
                         )}
-                        <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight drop-shadow-2xl">
-                            {name}
-                        </h1>
-                        <p className="text-xl md:text-2xl text-zinc-400 font-light max-w-2xl drop-shadow-md">
-                            {role}
-                        </p>
-                        <p className="text-zinc-500 max-w-xl leading-relaxed">
+
+                        <div className="space-y-1">
+                            <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-none">
+                                {name}
+                            </h1>
+                            <p className="text-sm sm:text-base font-mono font-bold text-pink-400 tracking-tight">
+                                {role}
+                            </p>
+                        </div>
+
+                        <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-xl font-normal">
                             {tagline}
                         </p>
                     </div>
                 </div>
-            </div>
 
-            {/* Right Column: Stats & Actions */}
-            <div className="space-y-6 flex flex-col justify-center">
-                
-                {/* Stats Grid */}
-                <div className="grid grid-cols-3 gap-3">
-                    {stats.map((stat, i) => (
-                        <StatBlock key={i} value={stat.value} label={stat.label} />
-                    ))}
-                </div>
+                {/* Right Column: Stats & Tactile Actions */}
+                <div className="flex flex-col gap-4 justify-center">
+                    <div className="grid grid-cols-3 gap-2.5">
+                        {stats.map((stat, i) => (
+                            <StatBlock key={i} value={stat.value} label={stat.label} />
+                        ))}
+                    </div>
 
-                {/* Contact Actions */}
-                <div className="flex flex-wrap gap-3">
-                    {contact.map((item, i) => (
-                        <IconButton3D 
-                            key={i}
-                            icon={item.icon}
-                            text={item.label}
-                            href={item.link}
-                        />
-                    ))}
+                    <div className="flex flex-wrap gap-2 pt-1">
+                        {contact.map((item, i) => (
+                            <IconButton3D 
+                                key={i}
+                                icon={item.icon}
+                                text={item.label}
+                                href={item.link}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </header>

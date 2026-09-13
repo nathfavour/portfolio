@@ -78,13 +78,13 @@ export const CV_CONFIG: CvConfig = {
         title: "Kylrix",
         subtitle: "Flagship Unified Local-First Workspace",
         description: "Unified, local-first workspace combining private notes, vaults, and autonomous AI agents with passkey authentication and non-custodial crypto checkout.",
-        stack: "Local-First • AI Agents • Passkeys • Crypto Checkout",
+        stack: "Local-First • AI Agents • Passkeys • Non-Custodial Crypto",
         icon: Layers,
         modules: [
-            { name: "Private Notes", desc: "Local-first knowledge workspace" },
-            { name: "Vaults", desc: "Passkey-authenticated storage" },
-            { name: "AI Agents", desc: "Autonomous local execution" },
-            { name: "Checkout", desc: "Non-custodial crypto rails" },
+            { name: "Private Notes", desc: "Local-first knowledge workspace & shared cache" },
+            { name: "Vaults", desc: "Passkey-authenticated zero-knowledge key vaults" },
+            { name: "AI Agents", desc: "Autonomous local agents & MCP orchestration" },
+            { name: "Crypto Rails", desc: "Non-custodial checkout & agent payments" },
         ]
     },
 
@@ -97,9 +97,9 @@ export const CV_CONFIG: CvConfig = {
                     title: "Kylrix",
                     role: "Flagship Platform",
                     desc: "Unified, local-first workspace combining private notes, vaults, and autonomous AI agents with passkey authentication and non-custodial crypto checkout.",
-                    tags: ["Local-First", "AI Agents", "Passkeys", "Crypto Checkout"],
+                    tags: ["Local-First", "AI Agents", "Passkeys", "Crypto Checkout", "RxDB"],
                     icon: Layers,
-                    accentClass: "from-indigo-500/20 to-indigo-900/10 border-indigo-500/30 text-indigo-300",
+                    accentClass: "from-pink-500/20 to-pink-900/10 border-pink-500/30 text-pink-300",
                     link: "https://github.com/nathfavour/kylrix"
                 }
             ]
@@ -148,8 +148,17 @@ export const CV_CONFIG: CvConfig = {
         },
         {
             name: "Protocols & Tools",
-            description: "Decentralized protocols, agent compilers, and privacy rails",
+            description: "Decentralized protocols, sovereign clients, agent compilers, and privacy rails",
             projects: [
+                {
+                    title: "Zup",
+                    role: "Sovereign Nostr Client",
+                    desc: "Ultra-lean, client-only sovereign Nostr client with local RxDB storage, zero-knowledge MEK passkeys, and real-time relay indexing.",
+                    tags: ["Nostr", "Client-Only", "RxDB", "Zero-Knowledge", "Vite"],
+                    icon: Network,
+                    accentClass: "from-amber-500/20 to-amber-900/10 border-amber-500/30 text-amber-300",
+                    link: "https://github.com/nathfavour/zup"
+                },
                 {
                     title: "anyisland",
                     role: "Package Manager",
@@ -174,7 +183,7 @@ export const CV_CONFIG: CvConfig = {
                     desc: "Decentralized messaging protocol replacing SMTP for Web3 and in-app inboxes.",
                     tags: ["Messaging Protocol", "Web3", "In-App Inboxes"],
                     icon: Network,
-                    accentClass: "from-amber-500/20 to-amber-900/10 border-amber-500/30 text-amber-300",
+                    accentClass: "from-indigo-500/20 to-indigo-900/10 border-indigo-500/30 text-indigo-300",
                     link: "https://github.com/nathfavour/TMP"
                 },
                 {
