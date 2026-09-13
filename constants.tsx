@@ -76,9 +76,9 @@ export const CV_CONFIG: CvConfig = {
 
     flagship: {
         title: "Kylrix",
-        subtitle: "Flagship Unified Local-First Workspace",
+        subtitle: "Unified Local-First Workspace & AI Runtime",
         description: "Unified, local-first workspace combining private notes, vaults, and autonomous AI agents with passkey authentication and non-custodial crypto checkout.",
-        stack: "Local-First • AI Agents • Passkeys • Non-Custodial Crypto",
+        stack: "Local-First • AI Agents • Passkeys • Crypto Checkout",
         icon: Layers,
         modules: [
             { name: "Private Notes", desc: "Local-first knowledge workspace & shared cache" },
@@ -87,6 +87,64 @@ export const CV_CONFIG: CvConfig = {
             { name: "Crypto Rails", desc: "Non-custodial checkout & agent payments" },
         ]
     },
+
+    // Strict priority curation: Kylrix, Zup, SettlerEngine, Anyisland, VibeAuracle, Threader
+    projects: [
+        {
+            title: "Kylrix",
+            role: "Flagship Platform",
+            desc: "Unified, local-first workspace combining private notes, vaults, and autonomous AI agents with passkey authentication and non-custodial crypto checkout.",
+            tags: ["Local-First", "AI Agents", "Passkeys", "Crypto Rails", "RxDB"],
+            icon: Layers,
+            accentClass: "from-pink-500/20 to-pink-900/10 border-pink-500/30 text-pink-300",
+            link: "https://github.com/nathfavour/kylrix"
+        },
+        {
+            title: "Zup",
+            role: "Sovereign Nostr Client",
+            desc: "Ultra-lean, client-only sovereign Nostr client with local RxDB storage, zero-knowledge MEK passkeys, and real-time relay indexing.",
+            tags: ["Nostr", "Client-Only", "RxDB", "Passkeys", "Vite"],
+            icon: Network,
+            accentClass: "from-amber-500/20 to-amber-900/10 border-amber-500/30 text-amber-300",
+            link: "https://github.com/nathfavour/zup"
+        },
+        {
+            title: "settlerengine",
+            role: "Agent Payment Engine",
+            desc: "High-throughput payment gateway enabling direct crypto transactions and EIP-712 settlement between autonomous software agents via x402.",
+            tags: ["x402 Protocol", "EIP-712", "Agent Payments", "Crypto Rails"],
+            icon: Zap,
+            accentClass: "from-yellow-500/20 to-yellow-900/10 border-yellow-500/30 text-yellow-300",
+            link: "https://github.com/nathfavour/settlerengine"
+        },
+        {
+            title: "anyisland",
+            role: "Agentic Package Manager",
+            desc: "Decentralized, platform-agnostic package manager engineered for distributing and orchestrating agentic software lifecycles.",
+            tags: ["Package Manager", "Autonomous Agents", "Decentralized Distribution"],
+            icon: Package,
+            accentClass: "from-purple-500/20 to-purple-900/10 border-purple-500/30 text-purple-300",
+            link: "https://github.com/nathfavour/anyisland"
+        },
+        {
+            title: "vibeauracle",
+            role: "Autonomous Coding Oracle",
+            desc: "Unified AI gateway and autonomous agentic loop in Go that independently analyzes, maintains, and evolves codebases with zero user friction.",
+            tags: ["Go", "Autonomous Coding", "AI Gateway", "Agentic Loop"],
+            icon: Terminal,
+            accentClass: "from-cyan-500/20 to-cyan-900/10 border-cyan-500/30 text-cyan-300",
+            link: "https://github.com/nathfavour/vibeauracle"
+        },
+        {
+            title: "threader",
+            role: "Autonomous Marketing Engine",
+            desc: "Multi-platform marketing and engagement engine automating high-signal content distribution across Nostr and Threads via AI synthesis.",
+            tags: ["Nostr", "Threads", "Autonomous Marketing", "Multimodal AI"],
+            icon: Cpu,
+            accentClass: "from-emerald-500/20 to-emerald-900/10 border-emerald-500/30 text-emerald-300",
+            link: "https://github.com/nathfavour/threader"
+        }
+    ],
 
     projectTiers: [
         {
@@ -97,7 +155,7 @@ export const CV_CONFIG: CvConfig = {
                     title: "Kylrix",
                     role: "Flagship Platform",
                     desc: "Unified, local-first workspace combining private notes, vaults, and autonomous AI agents with passkey authentication and non-custodial crypto checkout.",
-                    tags: ["Local-First", "AI Agents", "Passkeys", "Crypto Checkout", "RxDB"],
+                    tags: ["Local-First", "AI Agents", "Passkeys", "Crypto Rails", "RxDB"],
                     icon: Layers,
                     accentClass: "from-pink-500/20 to-pink-900/10 border-pink-500/30 text-pink-300",
                     link: "https://github.com/nathfavour/kylrix"
@@ -105,174 +163,58 @@ export const CV_CONFIG: CvConfig = {
             ]
         },
         {
-            name: "Core Systems",
-            description: "Low-level kernels, cryptographic primitives, and execution engines",
-            projects: [
-                {
-                    title: "keystone-zig",
-                    role: "Security Framework",
-                    desc: "RISC-V enclave security framework in Zig for isolated agent execution.",
-                    tags: ["Zig", "RISC-V", "Enclave Security", "TEE"],
-                    icon: Shield,
-                    accentClass: "from-blue-500/20 to-blue-900/10 border-blue-500/30 text-blue-300",
-                    link: "https://github.com/nathfavour/keystone-zig"
-                },
-                {
-                    title: "poly16duo",
-                    role: "PQC Primitive",
-                    desc: "Post-quantum cryptographic primitives in Zig compiled to freestanding WebAssembly.",
-                    tags: ["Zig", "WebAssembly", "Post-Quantum", "SIMD"],
-                    icon: KeyRound,
-                    accentClass: "from-cyan-500/20 to-cyan-900/10 border-cyan-500/30 text-cyan-300",
-                    link: "https://github.com/nathfavour/poly16duo"
-                },
-                {
-                    title: "settlerengine",
-                    role: "Payment Engine",
-                    desc: "High-throughput payment engine enabling direct crypto transactions between autonomous software agents.",
-                    tags: ["Crypto Rails", "Agent Payments", "Settlement"],
-                    icon: Zap,
-                    accentClass: "from-yellow-500/20 to-yellow-900/10 border-yellow-500/30 text-yellow-300",
-                    link: "https://github.com/nathfavour/settlerengine"
-                },
-                {
-                    title: "clarigggzOS",
-                    role: "OS Kernel",
-                    desc: "Operating system kernel targeting RISC-V architectures for smart glasses.",
-                    tags: ["Kernel", "RISC-V", "Smart Glasses", "OS"],
-                    icon: Glasses,
-                    accentClass: "from-emerald-500/20 to-emerald-900/10 border-emerald-500/30 text-emerald-300",
-                    link: "https://github.com/nathfavour/clarigggzOS"
-                }
-            ]
-        },
-        {
-            name: "Protocols & Tools",
-            description: "Decentralized protocols, sovereign clients, agent compilers, and privacy rails",
+            name: "Priority Systems & Rails",
+            description: "Autonomous payment engines, sovereign clients, agent package managers, and coding oracles",
             projects: [
                 {
                     title: "Zup",
                     role: "Sovereign Nostr Client",
                     desc: "Ultra-lean, client-only sovereign Nostr client with local RxDB storage, zero-knowledge MEK passkeys, and real-time relay indexing.",
-                    tags: ["Nostr", "Client-Only", "RxDB", "Zero-Knowledge", "Vite"],
+                    tags: ["Nostr", "Client-Only", "RxDB", "Passkeys", "Vite"],
                     icon: Network,
                     accentClass: "from-amber-500/20 to-amber-900/10 border-amber-500/30 text-amber-300",
                     link: "https://github.com/nathfavour/zup"
                 },
                 {
+                    title: "settlerengine",
+                    role: "Agent Payment Engine",
+                    desc: "High-throughput payment gateway enabling direct crypto transactions and EIP-712 settlement between autonomous software agents via x402.",
+                    tags: ["x402 Protocol", "EIP-712", "Agent Payments", "Crypto Rails"],
+                    icon: Zap,
+                    accentClass: "from-yellow-500/20 to-yellow-900/10 border-yellow-500/30 text-yellow-300",
+                    link: "https://github.com/nathfavour/settlerengine"
+                },
+                {
                     title: "anyisland",
-                    role: "Package Manager",
-                    desc: "Decentralized package manager for distributing agentic software.",
-                    tags: ["Package Manager", "Autonomous Agents", "Distribution"],
+                    role: "Agentic Package Manager",
+                    desc: "Decentralized, platform-agnostic package manager engineered for distributing and orchestrating agentic software lifecycles.",
+                    tags: ["Package Manager", "Autonomous Agents", "Decentralized Distribution"],
                     icon: Package,
                     accentClass: "from-purple-500/20 to-purple-900/10 border-purple-500/30 text-purple-300",
                     link: "https://github.com/nathfavour/anyisland"
                 },
                 {
-                    title: "ship",
-                    role: "Language & Compiler",
-                    desc: "Programming language built specifically for agent-driven code generation.",
-                    tags: ["Programming Language", "Compiler", "Code Generation"],
-                    icon: Code,
-                    accentClass: "from-rose-500/20 to-rose-900/10 border-rose-500/30 text-rose-300",
-                    link: "https://github.com/nathfavour/ship"
+                    title: "vibeauracle",
+                    role: "Autonomous Coding Oracle",
+                    desc: "Unified AI gateway and autonomous agentic loop in Go that independently analyzes, maintains, and evolves codebases with zero user friction.",
+                    tags: ["Go", "Autonomous Coding", "AI Gateway", "Agentic Loop"],
+                    icon: Terminal,
+                    accentClass: "from-cyan-500/20 to-cyan-900/10 border-cyan-500/30 text-cyan-300",
+                    link: "https://github.com/nathfavour/vibeauracle"
                 },
                 {
-                    title: "TMP",
-                    role: "Messaging Protocol",
-                    desc: "Decentralized messaging protocol replacing SMTP for Web3 and in-app inboxes.",
-                    tags: ["Messaging Protocol", "Web3", "In-App Inboxes"],
-                    icon: Network,
-                    accentClass: "from-indigo-500/20 to-indigo-900/10 border-indigo-500/30 text-indigo-300",
-                    link: "https://github.com/nathfavour/TMP"
-                },
-                {
-                    title: "shadowprism",
-                    role: "Privacy Sidecar",
-                    desc: "Privacy protocol aggregator for Solana.",
-                    tags: ["Solana", "Privacy Protocol", "Aggregator"],
-                    icon: Shield,
-                    accentClass: "from-teal-500/20 to-teal-900/10 border-teal-500/30 text-teal-300",
-                    link: "https://github.com/nathfavour/shadowprism"
+                    title: "threader",
+                    role: "Autonomous Marketing Engine",
+                    desc: "Multi-platform marketing and engagement engine automating high-signal content distribution across Nostr and Threads via AI synthesis.",
+                    tags: ["Nostr", "Threads", "Autonomous Marketing", "Multimodal AI"],
+                    icon: Cpu,
+                    accentClass: "from-emerald-500/20 to-emerald-900/10 border-emerald-500/30 text-emerald-300",
+                    link: "https://github.com/nathfavour/threader"
                 }
             ]
         }
     ],
 
-    projects: [
-        {
-            title: "keystone-zig",
-            role: "Security Framework",
-            desc: "RISC-V enclave security framework in Zig for isolated agent execution.",
-            tags: ["Zig", "RISC-V", "Enclave Security"],
-            icon: Shield,
-            accentClass: "from-blue-500/20 to-blue-900/10 border-blue-500/30 text-blue-300",
-            link: "https://github.com/nathfavour/keystone-zig"
-        },
-        {
-            title: "poly16duo",
-            role: "PQC Primitive",
-            desc: "Post-quantum cryptographic primitives in Zig compiled to freestanding WebAssembly.",
-            tags: ["Zig", "WebAssembly", "Post-Quantum"],
-            icon: KeyRound,
-            accentClass: "from-cyan-500/20 to-cyan-900/10 border-cyan-500/30 text-cyan-300",
-            link: "https://github.com/nathfavour/poly16duo"
-        },
-        {
-            title: "settlerengine",
-            role: "Payment Engine",
-            desc: "High-throughput payment engine enabling direct crypto transactions between autonomous software agents.",
-            tags: ["Crypto Rails", "Agent Payments"],
-            icon: Zap,
-            accentClass: "from-yellow-500/20 to-yellow-900/10 border-yellow-500/30 text-yellow-300",
-            link: "https://github.com/nathfavour/settlerengine"
-        },
-        {
-            title: "clarigggzOS",
-            role: "OS Kernel",
-            desc: "Operating system kernel targeting RISC-V architectures for smart glasses.",
-            tags: ["Kernel", "RISC-V", "Smart Glasses"],
-            icon: Glasses,
-            accentClass: "from-emerald-500/20 to-emerald-900/10 border-emerald-500/30 text-emerald-300",
-            link: "https://github.com/nathfavour/clarigggzOS"
-        },
-        {
-            title: "anyisland",
-            role: "Package Manager",
-            desc: "Decentralized package manager for distributing agentic software.",
-            tags: ["Package Manager", "Autonomous Agents"],
-            icon: Package,
-            accentClass: "from-purple-500/20 to-purple-900/10 border-purple-500/30 text-purple-300",
-            link: "https://github.com/nathfavour/anyisland"
-        },
-        {
-            title: "ship",
-            role: "Language & Compiler",
-            desc: "Programming language built specifically for agent-driven code generation.",
-            tags: ["Programming Language", "Code Generation"],
-            icon: Code,
-            accentClass: "from-rose-500/20 to-rose-900/10 border-rose-500/30 text-rose-300",
-            link: "https://github.com/nathfavour/ship"
-        },
-        {
-            title: "TMP",
-            role: "Messaging Protocol",
-            desc: "Decentralized messaging protocol replacing SMTP for Web3 and in-app inboxes.",
-            tags: ["Messaging Protocol", "Web3"],
-            icon: Network,
-            accentClass: "from-amber-500/20 to-amber-900/10 border-amber-500/30 text-amber-300",
-            link: "https://github.com/nathfavour/TMP"
-        },
-        {
-            title: "shadowprism",
-            role: "Privacy Sidecar",
-            desc: "Privacy protocol aggregator for Solana.",
-            tags: ["Solana", "Privacy Protocol"],
-            icon: Shield,
-            accentClass: "from-teal-500/20 to-teal-900/10 border-teal-500/30 text-teal-300",
-            link: "https://github.com/nathfavour/shadowprism"
-        }
-    ],
 
     experience: [
         {
